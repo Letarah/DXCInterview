@@ -29,7 +29,7 @@ public class LoginPage {
 
         //userid textfield
         JPanel userPanel = new JPanel();
-        JLabel userLabel = new JLabel(" 用户");
+        JLabel userLabel = new JLabel("User ID: ");
         userText = new JTextField(15);
         userPanel.add(userLabel);
         userPanel.add(userText);
@@ -105,7 +105,7 @@ public class LoginPage {
         while (sc.hasNextLine()) {
             String s = sc.nextLine();
             String[] userData = s.split(",");
-            if (user.equals(userData[0]) && pw.equals(userData[1])) {
+            if (user.equalsIgnoreCase(userData[0]) && pw.equals(userData[1])) {
                 return userData;
             }
         }
